@@ -1,38 +1,222 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+:root {
+    --color-cyan: hsl(176, 50%, 47%);
+    --color-darkcyan: hsl(176, 72%, 28%);
+    --color-darkgray: hsl(0, 0%, 48%);
+    --color-gray: #f2f2f2;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+    background-color: var(--color-gray);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 16px;
+    color: white;
+    margin: 0;
+    padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+* {
+    box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+h1, h2, h3, p {
+    margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+    font-size: 1.5rem;
+}
+
+.header {
+    position: relative;
+}
+
+.navbar {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 9rem;
+}
+
+.navbar__right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navbar__item {
+
+}
+
+main {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    color: #000;
+    position: relative;
+    top: -80px;
+}
+
+.mainBlock {
+    border: solid 1px #e6e6e6;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 3rem;
+    border-radius: .5rem;
+}
+
+.mainBlock .logo {
+    position: absolute;
+    top: -56px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.mainBlock__text {
+    text-align: center;
+    padding: 2rem;
+}
+
+.mainBlock__text p {
+    margin: 1rem;
+    color: var(--color-darkgray);
+    font-size: 1rem;
+}
+
+.mainBlock__actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainBlock__actions > div {
+    border-radius: 10rem;
+    font-weight: 500;
+
+}
+
+.mainBlock__actions .back {
+    background-color: var(--color-cyan);
+    color: #fff;
+    padding: 1rem 2rem;
+}
+
+.mainBlock__actions .bookmark {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0 1rem 0 0;
+    justify-content: space-between;
+    color: var(--color-darkgray);
+    background-color: #e6e6e6;
+
+}
+
+.croudStats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.croudStats__item:nth-child(2), .croudStats__item:nth-child(3) {
+    border-left: 1px solid #d0d0d0;
+    padding-left: 3rem;
+}
+
+.croudStats__item {
+
+}
+
+.croudStats__item--head {
+    font-size: 2rem;
+    margin-bottom: .5rem;;
+}
+
+.croudStats__item--body {
+    color: var(--color-darkgray);
+}
+
+.croudProgress {
+    height: 12px;
+    background: #e6e6e6;
+    border-radius: 10rem;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.croudProgress::before {
+    content: '';
+    position: absolute;
+    height: 12px;
+    background: var(--color-cyan);
+    width: 80%;
+    border-radius: 10rem;
+}
+.about {
+color: var(--color-darkgray);
+    line-height: 2;
+}
+.about p {
+    margin-top: 2rem;
+}
+.aboutBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    border: 1px solid #d0d0d0;
+    border-radius: .5rem;
+}
+.aboutBlock.disabled {
+    opacity: .5;
+}
+.aboutBlock__head {
+    display: flex;
+    justify-content: space-between;
+}
+.aboutBlock__head span {
+    color: var(--color-cyan);
+    font-weight: 500;
+}
+.aboutBlock__desc {
+    color: var(--color-darkgray);
+    line-height: 2;
+}
+.aboutBlock__actions {
+    display: flex;
+    justify-content: space-between;
+}
+.aboutBlock__actions .head {
+    display: flex;
+    align-items: center;
+
+}
+.aboutBlock__actions .head h2 {
+    font-size: 2rem;
+}
+.aboutBlock__actions .head span {
+    color: var(--color-darkgray);
+}
+.aboutBlock__actions .button {
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10rem;
+    font-weight: 500;
+    background-color: var(--color-cyan);
+}
+.aboutBlock__actions .button.disabled {
+    background-color: var(--color-darkgray);
+}
+.cards {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
